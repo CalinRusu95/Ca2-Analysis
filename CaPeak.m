@@ -3,12 +3,12 @@ clear all;
 close all;
 
 %Open and prepare results file
-res=fopen('C:\Users\calin\Google Drive\Proiecte\Calciu\CaImag\CaPeak\results.txt', 'w+');
-specs = fopen('C:\Users\calin\Google Drive\Proiecte\Calciu\CaImag\CaPeak\spectre.txt', 'w+');
+res=fopen('\path_to\results.txt', 'w+');
+specs = fopen('\path_to\spectre.txt', 'w+');
 %fprintf(res,'%9s %10s %5s %15s %15s %13s %16s %19s %15s %11s %11s %13s \n','#File', 'Duration', 'Type', 'Asymmetry', 'IncreaseSpeed1', 'IncreaseSpeed2', 'DecreaseSpeed1', 'DecreaseSpeed2', 'Area', 'Amplitude1', 'Amplitude2', 'PeaksDistance');
 
 %Import input files and input parameters
-InputPath = 'C:\Users\calin\Google Drive\Proiecte\Calciu\CaImag\CaPeak\Input\2021.04.23\14.04.2021-1, 6 Gy, CF, FF, puls atp\48 h\6 Gy FF\';
+InputPath = '\path_to\input_folder\';
 
 cd(InputPath);
 files = dir('**');
