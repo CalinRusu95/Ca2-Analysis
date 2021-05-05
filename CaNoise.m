@@ -3,12 +3,12 @@ clear all;
 close all;
 
 %Open and prepare results file
-res=fopen('C:\Users\calin\Google Drive\Work\Programe\MATLAB Codes\CaImag\CaNoise\results.txt', 'w+');
-specs = fopen('C:\Users\calin\Google Drive\Work\Programe\MATLAB Codes\CaImag\CaNoise\spectre.txt', 'w+');
+res=fopen('\path_to\results.txt', 'w+');
+specs = fopen('\path_to\spectre.txt', 'w+');
 %fprintf(res,'%9s %10s %5s %15s %15s %13s %16s %19s %15s %11s %11s %13s \n','#File', 'Duration', 'Type', 'Asymmetry', 'IncreaseSpeed1', 'IncreaseSpeed2', 'DecreaseSpeed1', 'DecreaseSpeed2', 'Area', 'Amplitude1', 'Amplitude2', 'PeaksDistance');
 
 %Import input files and input parameters
-InputPath = 'C:\Users\calin\Google Drive\Work\Programe\MATLAB Codes\CaImag\CaNoise\Input\2020.12.14\500uM\';
+InputPath = '\path_to\input_data_folder\';
 cd(InputPath);
 files = dir('**');
 files(1:2) = [];
@@ -199,7 +199,7 @@ for i =1:FilesNum %For all input files
     fprintf(res, format, param);
     
     figname = erase(files(i).name, '.csv');
-    savefolder = strcat('C:\Users\calin\Google Drive\Work\Programe\MATLAB Codes\CaImag\CaNoise\Plot Results\', figname,'.png');
+    savefolder = strcat('\path_to\plot_output_folder\', figname,'.png');
     saveas(figure(1),[savefolder]);
    
     commandwindow
